@@ -1,0 +1,40 @@
+.booking-container .info {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 每行 3 个，等宽 */
+  gap: 16px; /* 元素之间的间距，可自行调整 */
+  padding: 20px;
+  box-sizing: border-box;
+  .item {
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    gap: 15px;
+
+    .icon {
+      background-color: #b6cedf;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5em;
+      color: #0e54ce;
+    }
+    .text {
+      .title {
+        font-weight: bold;
+        margin: 0;
+        font-size: 1.1em;
+      }
+      .content {
+        margin: 5px 0 0 0;
+        font-size: 1em;
+        color: #555555;
+      }
+    }
+  }
+}
