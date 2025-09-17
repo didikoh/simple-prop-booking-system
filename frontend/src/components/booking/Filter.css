@@ -32,3 +32,55 @@
 .filter-checkbox {
 	margin-right: 6px;
 }
+
+.filter-group {
+	display: flex;
+	align-items: center;
+	gap: 0;
+}
+
+.filter-toggle {
+	padding: 8px 24px;
+	border: 1.5px solid #b6cedf;
+	background: #f5f8fa;
+	color: #0e54ce;
+	font-size: 1em;
+	cursor: pointer;
+	transition: background 0.18s, color 0.18s, border 0.18s, box-shadow 0.18s;
+	outline: none;
+	border-right: none;
+	border-radius: 0;
+	font-weight: 500;
+	position: relative;
+	z-index: 1;
+}
+
+.filter-toggle:first-child {
+	border-top-left-radius: 20px;
+	border-bottom-left-radius: 20px;
+}
+.filter-toggle:last-child {
+	border-top-right-radius: 20px;
+	border-bottom-right-radius: 20px;
+	border-right: 1.5px solid #b6cedf;
+}
+
+.filter-toggle:not(:last-child) {
+	margin-right: -1.5px;
+}
+
+.filter-toggle.active {
+	background: #0e54ce;
+	color: #fff;
+	border-color: #0e54ce;
+	font-weight: bold;
+	z-index: 2;
+	box-shadow: 0 2px 8px rgba(14,84,206,0.10);
+}
+
+.filter-toggle:hover:not(.active),
+.filter-toggle:focus-visible:not(.active) {
+	background: #e6edfa;
+	color: #0e54ce;
+	border-color: #7fa8e3;
+}

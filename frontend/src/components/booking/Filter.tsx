@@ -12,13 +12,12 @@ const Filter = ({ selectedLevel, locked, blocked, available, onChange }: any) =>
             available,
         });
     };
-    const handleCheckboxChange = (e: any) => {
-        const { name, checked } = e.target;
+    const handleToggle = (name: string) => {
         onChange({
             level: selectedLevel,
-            locked: name === "locked" ? checked : locked,
-            blocked: name === "blocked" ? checked : blocked,
-            available: name === "available" ? checked : available,
+            locked: name === "locked" ? !locked : false,
+            blocked: name === "blocked" ? !blocked : false,
+            available: name === "available" ? !available : false,
         });
     };
     return (
@@ -39,33 +38,27 @@ const Filter = ({ selectedLevel, locked, blocked, available, onChange }: any) =>
                 </select>
             </div>
             <div className="filter-group">
-                <label>
-                    <input
-                        type="checkbox"
-                        className="filter-checkbox"
-                        name="locked"
-                        checked={locked}
-                        onChange={handleCheckboxChange}
-                    /> Locked
-                </label>
-                <label>
-                    <input
-                        type="checkbox"
-                        className="filter-checkbox"
-                        name="blocked"
-                        checked={blocked}
-                        onChange={handleCheckboxChange}
-                    /> Blocked
-                </label>
-                <label>
-                    <input
-                        type="checkbox"
-                        className="filter-checkbox"
-                        name="available"
-                        checked={available}
-                        onChange={handleCheckboxChange}
-                    /> Available
-                </label>
+                <button
+                    type="button"
+                    className={`filter-toggle${locked ? ' active' : ''}`}
+                    onClick={() => handleToggle('locked')}
+                >
+                    {locked ? 'Locked ✓' : 'Locked'}
+                </button>
+                <button
+                    type="button"
+                    className={`filter-toggle${blocked ? ' active' : ''}`}
+                    onClick={() => handleToggle('blocked')}
+                >
+                    {blocked ? 'Blocked ✓' : 'Blocked'}
+                </button>
+                <button
+                    type="button"
+                    className={`filter-toggle${available ? ' active' : ''}`}
+                    onClick={() => handleToggle('available')}
+                >
+                    {available ? 'Available ✓' : 'Available'}
+                </button>
             </div>
         </div>
     )

@@ -40,6 +40,7 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+        'agent' => ['driver' => 'session', 'provider' => 'agents'], // 主要给 Sanctum/本地调试用
     ],
 
     /*
@@ -64,7 +65,7 @@ return [
             'driver' => 'eloquent',
             'model' => env('AUTH_MODEL', App\Models\User::class),
         ],
-
+        'agents' => ['driver' => 'eloquent', 'model' => App\Models\Agent::class],
         // 'users' => [
         //     'driver' => 'database',
         //     'table' => 'users',

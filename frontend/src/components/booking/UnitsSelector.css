@@ -49,15 +49,21 @@
       }
 
       .btn.locked {
-        background: #f8d7da;
+        background: #f8f3c4;
         cursor: not-allowed;
-        color: #721c24;
+        color: #000000;
       }
 
       .btn.blocked {
-        background: #fff3cd;
+        background: #c4c4c4;
         cursor: not-allowed;
         color: #856404;
+      }
+
+      .btn.sold{
+        background: #ffbdbd;
+        cursor: not-allowed;
+        color: #6c757d;
       }
     }
   }

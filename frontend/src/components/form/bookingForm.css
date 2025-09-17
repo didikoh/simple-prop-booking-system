@@ -1,0 +1,94 @@
+.booking-form {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 2rem 2.5rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  label {
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 0.2rem;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="number"],
+  .PhoneInputInput {
+    padding: 0.6rem 0.9rem;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 1rem;
+    background: #fafbfc;
+    transition: border 0.2s;
+    outline: none;
+  }
+
+  input:focus,
+  .PhoneInputInput:focus {
+    border-color: #2563eb;
+  }
+
+  .PhoneInput {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  button[type="submit"] {
+    margin-top: 0.5rem;
+    padding: 0.7rem 0;
+    background: #2563eb;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  button[type="submit"]:hover {
+    background: #1d4ed8;
+  }
+}
+
+.booking-overlay {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.booking-form-modal {
+  position: relative;
+  z-index: 1001;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.booking-cancel {
+  background: rgb(253, 92, 92);
+  font-weight: bold;
+  color: white;
+}
+
+.booking-cancel:hover {
+  background: #e11d48;
+}
