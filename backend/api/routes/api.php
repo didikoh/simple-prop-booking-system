@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\AgentAuthController;
+use App\Http\Controllers\AdminAuthController;
 
 Route::get('/user', function (Request $request) {
     return $request->user();
@@ -13,8 +14,17 @@ Route::get('/user', function (Request $request) {
 Route::get('/projects/{project}', [ProjectController::class, 'showByName']);
 Route::post('/bookings', [BookingController::class, 'store']);
 
-Route::post('/agent/login',  [AgentAuthController::class, 'login']);
+Route::post('/agent/login', [AgentAuthController::class, 'login']);
 Route::post('/agent/logout', [AgentAuthController::class, 'logout'])->middleware('auth:sanctum');
 Route::middleware('auth:sanctum')->get('/me', function (\Illuminate\Http\Request $r) {
     return $r->user(); // 当前登录的 Agent
+});
+Route::prefix('admin')->group(function () {
+    Route::post('/login', [AdminAuthController::class, 'login'])->middleware('throttle:login');
+    Route::post('/logout', [AdminAuthController::class, 'logout'])->middleware('auth:sanctum');
+
+    // 受保护示例：获取当前登录 Admin 的信息
+    Route::get('/me', function (\Illuminate\Http\Request $r) {
+        return $r->user(); // 当前持 token 的 Admin
+    })->middleware('auth:sanctum');
 });

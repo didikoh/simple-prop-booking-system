@@ -1,6 +1,4 @@
 .booking-form {
-  max-width: 400px;
-  margin: 40px auto;
   padding: 2rem 2.5rem;
   background: #fff;
   border-radius: 12px;
@@ -8,6 +6,14 @@
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+
+  .title {
+    position: relative;
+    align-self: center;
+    margin: 0;
+    text-align: center;
+    line-height: 1.5;
+  }
 
   > div {
     display: flex;
@@ -61,6 +67,16 @@
   button[type="submit"]:hover {
     background: #1d4ed8;
   }
+
+  .booking-cancel {
+    background: rgb(253, 92, 92);
+    font-weight: bold;
+    color: white;
+  }
+
+  .booking-cancel:hover {
+    background: #e11d48;
+  }
 }
 
 .booking-overlay {
@@ -72,23 +88,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1000;
+  z-index: 10;
 }
 
 .booking-form-modal {
   position: relative;
-  z-index: 1001;
+  z-index: 11;
   display: flex;
   flex-direction: column;
   align-items: stretch;
-}
-
-.booking-cancel {
-  background: rgb(253, 92, 92);
-  font-weight: bold;
-  color: white;
-}
-
-.booking-cancel:hover {
-  background: #e11d48;
 }

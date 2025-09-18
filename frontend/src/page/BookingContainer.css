@@ -1,0 +1,25 @@
+.booking-container {
+  margin-top: 50px;
+  width: 90%;
+  min-height: 500px;
+  justify-self: center;
+  border-radius: 12px;
+  border: 2px solid #6584eb;
+  margin-bottom: 130px;
+
+  .header {
+    border-radius: 10px 10px 0 0;
+    text-align: center;
+    font-size: 2em;
+    padding: 20px;
+    background: #083788;
+    color: white;
+  }
+
+  .seperator {
+    height: 2px;
+    background: #a9addf;
+    margin: 20px 20px;
+    border-radius: 1px;
+  }
+}

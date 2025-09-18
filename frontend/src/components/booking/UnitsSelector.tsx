@@ -3,7 +3,6 @@ import { FaLock, FaUnlock } from "react-icons/fa";
 import { MdBlock } from "react-icons/md";
 import "./UnitsSelector.css"
 import { BsHouseCheckFill } from "react-icons/bs";
-import { useState } from "react";
 
 type UnitsSelectorProps = {
   selectedLevel: string;

@@ -41,6 +41,7 @@ return [
             'provider' => 'users',
         ],
         'agent' => ['driver' => 'session', 'provider' => 'agents'], // 主要给 Sanctum/本地调试用
+        'admin' => ['driver' => 'session', 'provider' => 'admins'], // 可用于需要 session 的后台
     ],
 
     /*
@@ -66,6 +67,7 @@ return [
             'model' => env('AUTH_MODEL', App\Models\User::class),
         ],
         'agents' => ['driver' => 'eloquent', 'model' => App\Models\Agent::class],
+        'admins' => ['driver' => 'eloquent', 'model' => App\Models\Admin::class],
         // 'users' => [
         //     'driver' => 'database',
         //     'table' => 'users',

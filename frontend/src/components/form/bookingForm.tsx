@@ -54,10 +54,13 @@ const BookingForm: React.FC<BookingFormProps> = ({ onClose, selectedUnit, onBook
         }
       } catch (error) {
         console.error('Error submitting booking:', error);
-        alert('An error occurred while submitting the booking. Please try again.');
+        if (axios.isAxiosError(error)) {
+          alert(error.response?.data?.message || 'An error occurred while submitting the booking.');
+        } else {
+          alert('An error occurred while submitting the booking.');
+        }
       }
     }
-
     submitBooking();
   }
 
@@ -65,6 +68,7 @@ const BookingForm: React.FC<BookingFormProps> = ({ onClose, selectedUnit, onBook
     <div className="booking-overlay">
       <div className="booking-form-modal">
         <form className="booking-form" onSubmit={handleSubmit}>
+          <h2 className="title">Booking Form<br /> {selectedUnit.unit_number} </h2>
           <div>
             <label>Buyer Name</label>
             <input
